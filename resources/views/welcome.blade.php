@@ -77,7 +77,7 @@
     </div>
   </section><!-- #intro -->
 
-  <!-- Modal -->
+  <!-- Modal login -->
   <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -115,9 +115,7 @@
               <div class="col-sm-10">
                 <a href="" data-toggle="modal" data-target="#RegModal" data-dismiss="modal">Register <i class="ion-ios-arrow-right"></i></a>
 				  <br>
-				  <a href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password ?') }}
-				  </a>
+          <a href="" data-toggle="modal" data-target="#EmailModal" data-dismiss="modal">Forgot Password <i class="ion-ios-arrow-right"></i></a>
               </div>
             </div>
             <div class="modal-footer">
@@ -130,7 +128,7 @@
   </div>
   <!-- Modal -->
 
-  <!-- Modal -->
+  <!-- Modal register-->
   <div class="modal fade" id="RegModal" role="dialog" aria-labelledby="RegModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -208,6 +206,47 @@
     </div>
   </div>
   <!-- Modal -->
+
+  <!-- Modal Email -->
+  <div class="modal fade" id="EmailModal" role="dialog" aria-labelledby="EmailModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">{{ __('Reset Password') }}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{{ route('password.request') }}" class="login-form form-horizontal">
+            @csrf
+              <div class="form-group row">
+                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                  <div class="col-md-6">
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                    @if ($errors->has('email'))
+                      <span class="invalid-feedback" role="alert">
+                      <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                    @endif
+                  </div>
+            </div>
+
+            <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+            <button type="submit" class="btn btn-primary">
+            {{ __('Send Password Reset Link') }}
+            </button>
+            
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+
 
   <main id="main">
 
