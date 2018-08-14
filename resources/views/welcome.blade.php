@@ -234,9 +234,6 @@
 
             <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-            <div class="col">
-                  <a href="" data-toggle="modal" data-target="#myModal" data-dismiss="modal"><i class="ion-ios-arrow-left"></i> {{ __('Login') }}</a>
-              </div>
             <button type="submit" class="btn btn-primary">
             {{ __('Send Password Reset Link') }}
             </button>
