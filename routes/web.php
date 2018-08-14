@@ -13,11 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('apps');
 
-Route::get('/top-up', function () {
-    return view('top-up');
-});
 
 Auth::routes();
 
@@ -33,4 +30,6 @@ Route::prefix('home')->group(function () {
     });
 });
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('apps')->group(function () {
+    Route::get('/', 'AppsController@index')->name('index');
+});
