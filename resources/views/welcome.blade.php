@@ -216,7 +216,12 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <form method="post" action="{{ route('password.request') }}" class="login-form form-horizontal">
+          @if (session('status'))
+              <div class="alert alert-success" role="alert">
+                 {{ session('status') }}
+              </div>
+          @endif
+          <form method="post" action="{{ route('password.email') }}" class="login-form form-horizontal">
             @csrf
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
