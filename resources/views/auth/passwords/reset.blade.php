@@ -19,7 +19,7 @@
       <div class="login-box">
         <form class="login-form" method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Reset Password') }}">
         @csrf
-        <input type="hidden">
+        <input type="hidden" name="token" value="{{ $token }}">
           <h3 class="login-head">Reset Password</h3>
             <div class="form-group">
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" placeholder="Enter Email">

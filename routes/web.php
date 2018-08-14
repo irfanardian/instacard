@@ -18,12 +18,7 @@ Route::get('/', function () {
 Route::get('/top-up', function () {
     return view('top-up');
 });
-Route::get('/reset', function () {
-    return view('auth.passwords.reset');
-});
-Route::get('/reset2', function () {
-    return view('auth.passwords.reset2');
-});
+
 Auth::routes();
 
 Route::prefix('home')->group(function () {
