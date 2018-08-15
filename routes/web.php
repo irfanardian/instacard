@@ -29,16 +29,25 @@ Route::prefix('home')->group(function () {
         Route::get('/isi', 'HomeController@isi_voucher')->name('isi_voucher');
     });
 });
-Route::group(['prefix' => 'apps',  'middleware' => 'desktop'], function()
+
+
+Route::group(['prefix' => 'apps', 'middleware' => 'desktop'], function()
 {
     Route::get('/', 'AppsController@index')->name('index');
+    //Auth
+    Route::post('/login','Apps\LoginController@login')->name('appslogin');
+    Route::post('/register','Apps\LoginController@login')->name('appsregister');
+    Route::post('/logout', 'Apps\LoginController@logout')->name('appslogout');
+    Route::post('/password/reset', 'Apps\LoginController@reset')->name('appsreset');
+    Route::post('/password/email', 'Apps\LoginController@reset')->name('appsemail');
+
     Route::get('/login',function(){
         return view('apps.auth.login');
     });
     Route::get('/register',function(){
         return view('apps.auth.register');
     });
-    Route::get('/reset',function(){
+    Route::get('password/reset',function(){
         return view('apps.auth.reset');
     });
 });
