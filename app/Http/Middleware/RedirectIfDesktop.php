@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Jenssegers\Agent\Agent;
+use Agent;
 
-class browse
+class RedirectIfDesktop
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,18 @@ class browse
      */
     public function handle($request, Closure $next)
     {
+<<<<<<< HEAD:app/Http/Middleware/browse.php
         // $agent = new Agent();
         // if($agent->isDesktop())
         // {
         //     return redirect('/');
         // }
+=======
+        if (Agent::isDesktop())
+        {
+            return redirect('/');
+        }
+>>>>>>> dc66eba75a566a53404b6b3e2c46b083115ea367:app/Http/Middleware/RedirectIfDesktop.php
         return $next($request);
     }
 }
