@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('apps');
+});
 
 
 Auth::routes();
@@ -30,6 +30,6 @@ Route::prefix('home')->group(function () {
     });
 });
 
-Route::prefix('apps')->group(function () {
+Route::middleware('desktop')->prefix('apps')->group(function () {
     Route::get('/', 'AppsController@index')->name('index');
 });

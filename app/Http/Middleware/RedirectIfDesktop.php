@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Jenssegers\Agent\Agent;
+use Agent;
 
-class browse
+class RedirectIfDesktop
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class browse
      */
     public function handle($request, Closure $next)
     {
-        $agent = new Agent();
-        if($agent->isPhone())
+        if (Agent::isDesktop())
         {
-            return redirect('apps');
+            return redirect('/');
         }
         return $next($request);
     }
