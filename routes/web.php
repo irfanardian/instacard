@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('apps');
+});
 
 
 Auth::routes();
@@ -29,7 +29,16 @@ Route::prefix('home')->group(function () {
         Route::get('/isi', 'HomeController@isi_voucher')->name('isi_voucher');
     });
 });
-
-Route::prefix('apps')->group(function () {
+Route::group(['prefix' => 'apps',  'middleware' => 'apps'], function()
+{
     Route::get('/', 'AppsController@index')->name('index');
+    Route::get('/login',function(){
+        return view('apps.auth.login');
+    });
+    Route::get('/register',function(){
+        return view('apps.auth.register');
+    });
+    Route::get('/reset',function(){
+        return view('apps.auth.reset');
+    });
 });

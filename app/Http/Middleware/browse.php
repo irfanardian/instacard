@@ -16,11 +16,11 @@ class browse
      */
     public function handle($request, Closure $next)
     {
-        $agent = new Agent();
-        if($agent->isPhone())
-        {
-            return redirect('apps');
-        }
+        // $agent = new Agent();
+        // if($agent->isDesktop())
+        // {
+        //     return redirect('/');
+        // }
         return $next($request);
     }
 }
