@@ -29,13 +29,8 @@ Route::prefix('home')->group(function () {
         Route::get('/isi', 'HomeController@isi_voucher')->name('isi_voucher');
     });
 });
-<<<<<<< HEAD
-Route::group(['prefix' => 'apps',  'middleware' => 'apps'], function()
+Route::group(['prefix' => 'apps',  'middleware' => 'desktop'], function()
 {
-=======
-
-Route::middleware('desktop')->prefix('apps')->group(function () {
->>>>>>> dc66eba75a566a53404b6b3e2c46b083115ea367
     Route::get('/', 'AppsController@index')->name('index');
     Route::get('/login',function(){
         return view('apps.auth.login');
