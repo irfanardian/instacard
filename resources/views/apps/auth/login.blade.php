@@ -10,7 +10,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="{{ route('appslogin') }}" aria-label="{{ __('Login') }}">
+				<form class="login100-form validate-form" method="POST" action="{{ route('apps.login') }}" aria-label="{{ __('Login') }}">
                 @csrf
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">{{ __('Username') }}</span>
@@ -41,7 +41,7 @@
 						</div>
 
 						<div>
-							<a href="{{ route('password.request') }}" class="txt1">
+							<a href="{{ route('apps.password.request') }}" class="txt1">
                             {{ __('Forgot Your Password?') }}
 							</a>
 						</div>
@@ -53,7 +53,7 @@
 						</button></center>
 					</div>
 					<div class="container-login100-form-btn">
-                        <center><p><small>Don't Have an Account?</small><br><a href="{{ url('apps/register') }}">Register!</a></p></center>
+                        <center><p><small>Don't Have an Account?</small><br><a href="{{ route('apps.register') }}">Register!</a></p></center>
 					</div>
 				</form>
 			</div>
