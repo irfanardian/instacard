@@ -18,4 +18,18 @@ class AppsController extends Controller
     
         return view('apps.index', ['cabang'=>$Cabang]);
     }
+
+    public function room()
+    {
+        $room = DB::table('roomgroup')
+                ->select('*')
+                ->orderBy('idroom')
+                ->get();
+        
+        $voucher = DB::table('voucher')
+                ->select('*')
+                ->get();
+
+        return view('apps.room', ['room'=>$room, 'voucher' => $voucher]);
+    }
 }

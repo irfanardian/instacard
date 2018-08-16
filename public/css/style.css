@@ -603,7 +603,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
   background: url("../img/about-bg.jpg") center top no-repeat fixed;
   background-size: cover;
-  padding: 60px 0 40px 0;
+  padding: 20px 0 40px 0;
   position: relative;
 }
 
@@ -856,22 +856,22 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  padding: 10px 0;
+  padding: 0;
 }
 
 #portfolio #portfolio-flters {
   padding: 0;
-  margin: 5px 0 35px 0;
+  margin: 5px 0 5px 0;
   list-style: none;
   text-align: center;
 }
 
 #portfolio #portfolio-flters li {
   cursor: pointer;
-  margin: 15px 15px 15px 0;
+  margin: 5px 5px 5px 0;
   display: inline-block;
   padding: 10px 20px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 20px;
   color: #666666;
   border-radius: 4px;
@@ -970,7 +970,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fff;
   text-align: center;
   padding: 30px;
-  height: 90px;
+  height: 120px;
   border-radius: 0 0 3px 3px;
 }
 
@@ -991,7 +991,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio .portfolio-item .portfolio-info p {
-  padding: 0;
+  padding-top: 10px;
   margin: 0;
   color: #b8b8b8;
   font-weight: 500;
