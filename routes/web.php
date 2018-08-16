@@ -31,15 +31,15 @@ Route::prefix('home')->group(function () {
 });
 
 
-Route::group(['prefix' => 'apps', 'middleware' => 'desktop'], function()
+Route::group(['prefix' => 'apps', 'middleware' => 'desktop', 'as' => 'apps.'], function()
 {
     Route::get('/', 'AppsController@index')->name('index');
     //Auth
-    Route::post('/login','Apps\LoginController@login')->name('appslogin');
-    Route::post('/register','Apps\LoginController@login')->name('appsregister');
-    Route::post('/logout', 'Apps\LoginController@logout')->name('appslogout');
-    Route::post('/password/reset', 'Apps\LoginController@reset')->name('appsreset');
-    Route::post('/password/email', 'Apps\LoginController@reset')->name('appsemail');
+    Route::post('/login','Apps\LoginController@login')->name('login');
+    Route::post('/register','Apps\LoginController@login')->name('register');
+    Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
+    Route::post('/password/reset', 'Apps\LoginController@reset')->name('reset');
+    Route::post('/password/email', 'Apps\LoginController@reset')->name('email');
 
     Route::get('/login',function(){
         return view('apps.auth.login');
@@ -49,5 +49,5 @@ Route::group(['prefix' => 'apps', 'middleware' => 'desktop'], function()
     });
     Route::get('password/reset',function(){
         return view('apps.auth.reset');
-    });
+    })->name('password.request');
 });
