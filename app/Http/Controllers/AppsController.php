@@ -19,7 +19,7 @@ class AppsController extends Controller
         return view('apps.index', ['cabang'=>$Cabang]);
     }
 
-    public function room()
+    public function room($id)
     {
         $room = DB::table('roomgroup')
                 ->select('*')
@@ -27,9 +27,21 @@ class AppsController extends Controller
                 ->get();
         
         $voucher = DB::table('voucher')
-                ->select('*')
+                ->join('roomgroup','voucher.roomid','=','roomgroup.idroom')
+                ->where('voucher.cnid','=',$id)
+                ->select('voucher.*','roomgroup.namagroup')
                 ->get();
 
         return view('apps.room', ['room'=>$room, 'voucher' => $voucher]);
+    }
+    public function konfirmasi($id)
+    {
+        $voucher = DB::table('voucher')
+                ->join('roomgroup','voucher.roomid','=','roomgroup.idroom')
+                ->where('voucher.kode','=',$id)
+                ->select('voucher.*','roomgroup.namagroup')
+                ->get();
+        
+        return response()->json($voucher);
     }
 }

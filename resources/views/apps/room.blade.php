@@ -22,17 +22,16 @@
 
         <div class="row portfolio-container">
         @foreach($voucher as $data)
-        <a href="">
           <div id="portfolio-flters" class="col-lg-4 col-md-6 portfolio-item filter-{{ $data -> roomid}} wow fadeInUp">
             <div class="portfolio-wrap">
                 <div class="portfolio-info">
-                    <h4 class="title">{{ $data -> namavoucher}}</h4>
+                    <h4 class="title">{{ $data -> namavoucher}} ({{ $data -> durasi}} Menit)</h4>
                     <a class="cta-btn" href="">Rp {{ $data -> harga}},-</a>
-                    <p class="description">Durasi: {{ $data -> durasi}} Menit</p>
+                    <p class="description">Ruang: {{ $data -> namagroup}}</p>
+                    <a href="{{ route('apps.konfirmasi', $data -> kode) }}" class="btn btn-outline-success">Beli</a>
                 </div>
             </div>
           </div>
-        </a>
         @endforeach
         </div>
 

@@ -20,7 +20,7 @@
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">{{ $data -> tagname }}</a></h4>
+                <h4><a href="{{ route('apps.name', $data -> tagid)}}">{{ $data -> tagname }}</a></h4>
                 <p>Cabang</p>
               </div>
             </div>

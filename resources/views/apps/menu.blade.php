@@ -23,7 +23,7 @@
             <img src="{{ asset('img/about-plan.jpg') }}" alt="" class="img-fluid">
             <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
             </div>
-            <h2 class="title"><a href="#">Voucher</a></h2>
+            <h2 class="title"><a href="{{ route('apps.room', $id)}}">Voucher</a></h2>
             <p></p>
         </div>
         </div>

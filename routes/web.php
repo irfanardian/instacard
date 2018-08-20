@@ -34,17 +34,21 @@ Route::prefix('home')->group(function () {
 Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
 {
     Route::get('/', 'AppsController@index')->name('index');
-    Route::get('/menu',function(){
-        return view('apps.menu');
+    Route::get('/menu/{id}',function($id){
+        return view('apps.menu',compact('id'));
+    })->name('name');
+    Route::prefix('voucher')->group(function(){
+        Route::get('/room/{id}','AppsController@room')->name('room');
+        Route::get('/konfimasi/{id}','AppsController@konfirmasi')->name('konfirmasi')->middleware('guest');
     });
-    Route::get('/room','AppsController@room')->name('room');
+    
+
     //Auth
     Route::post('/login','Apps\LoginController@login')->name('login');
     Route::post('/register','Apps\LoginController@login')->name('register');
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
     Route::post('/password/reset', 'Apps\LoginController@reset')->name('reset');
     Route::post('/password/email', 'Apps\LoginController@reset')->name('email');
-
     Route::get('/login',function(){
         return view('apps.auth.login');
     });
