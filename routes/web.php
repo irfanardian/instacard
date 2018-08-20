@@ -34,6 +34,10 @@ Route::prefix('home')->group(function () {
 Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
 {
     Route::get('/', 'AppsController@index')->name('index');
+    Route::get('/menu',function(){
+        return view('apps.menu');
+    });
+    Route::get('/room','AppsController@room')->name('room');
     //Auth
     Route::post('/login','Apps\LoginController@login')->name('login');
     Route::post('/register','Apps\RegisterController@register')->name('register');

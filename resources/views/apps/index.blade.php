@@ -1,67 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>InstaCard</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+@extends('apps.layout')
 
-    <!-- Favicons -->
-    <link href="{{ asset('img/ins32.png') }}" rel="icon">
-    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+@section('content')
+<section id="call-to-action" class="wow fadeIn">
+    <div class="container text-center">
+      <h3 class="section-title">Instacard</h3>
+      <p>Dekat, Cepat, Mantap</p>
+    </div>
+</section>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
-    <!-- Bootstrap CSS File -->
-    <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Libraries CSS Files -->
-    <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
-
-    <!-- Main Stylesheet File -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: BizPage
-    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
-
-<body>
-
-  <!--==========================
-    Header
-  ============================-->
-  
-  <!--==========================
-    Intro Section
-  ============================-->
-  <main id="main">
-
-    <!--==========================
-      Portfolio Section
-    ============================-->
-    <section id="portfolio"  class="section-bg" >
+<section id="portfolio"  class="section-bg" >
       <div class="container">
-
-        <header class="section-header">
-          <h3 class="section-title">Instacard</h3>
-        </header>
-
         <div class="row portfolio-container">
         @foreach($cabang as $data)
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="{{ asset('img/portfolio/app1.jpg') }}" class="img-fluid" alt="">
+                <img src="{{ asset('img/portfolio/app1.jpg') }}" class="img-thumbnail" alt="">
                 <a href="{{ asset('img/portfolio/app1.jpg ') }}" data-lightbox="portfolio" data-title="{{ $data -> tagid }}" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
               </figure>
 
@@ -72,34 +26,8 @@
             </div>
           </div>
         @endforeach
-      </div>
-    </section><!-- #portfolio -->
+        </div>
+    </div>
+</section><!-- #portfolio -->
 
-  </main>
-
-  <!-- JavaScript Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
-  <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-  <script src="{{ asset('lib/superfish/hoverIntent.js') }}"></script>
-  <script src="{{ asset('lib/superfish/superfish.min.js') }}"></script>
-  <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-  <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-  <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
-  <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
-  <script src="{{ asset('lib/touchSwipe/jquery.touchSwipe.min.js') }}"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="{{ asset('contactform/contactform.js') }}"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="{{ asset('js/main.js') }}"></script>
-
-  <!-- Modal -->
-  <script src="{{ asset('js/modal.js') }}"></script>
-
-</body>
-</html>
+@endsection
