@@ -40,8 +40,8 @@ class AppsController extends Controller
                 ->join('roomgroup','voucher.roomid','=','roomgroup.idroom')
                 ->where('voucher.kode','=',$id)
                 ->select('voucher.*','roomgroup.namagroup')
-                ->get();
+                ->first();
         
-        return response()->json($voucher);
+        return view('apps.konfirmasi',['voucher'=>$voucher]);
     }
 }

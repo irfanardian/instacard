@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 <!--===============================================================================================-->
+	@yield('assets')
 <body>
 
 	@yield('content')

@@ -62,10 +62,20 @@ a:hover {
 	text-decoration: none;
   color: #57b846;
 }
-
+row{
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+	margin: 8px;
 }
 
 p {
@@ -209,7 +219,7 @@ iframe {
   background-size: cover;
   background-position: center;
 
-  padding: 70px 15px 74px 15px;
+  padding: 25px 15px 29px 15px;
 }
 
 .login100-form-title-1 {
@@ -219,6 +229,22 @@ iframe {
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+  margin-bottom: 15px;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+p{
+  color: #fff;
+  margin-bottom: 15px;
 }
 
 .login100-form-title::before {
@@ -262,9 +288,17 @@ iframe {
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #808080;
+  color: #000;
   line-height: 1.2;
-  text-align: right;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 
   position: absolute;
   top: 14px;
@@ -400,10 +434,36 @@ input.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  min-width: 160px;
+  min-width: 120px;
   height: 50px;
   background-color: #18d26e;
   border-radius: 25px;
+
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+ 
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.login100-form-btn-red {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 120px;
+  height: 50px;
+  background-color: #ff0d0d;
+  border-radius: 25px;
+  margin-right: 10px;
 
   font-family: Poppins-Regular;
   font-size: 16px;
@@ -417,6 +477,10 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
+  background-color: #333333;
+}
+
+.login100-form-btn-red:hover {
   background-color: #333333;
 }
 

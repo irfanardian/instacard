@@ -41,20 +41,14 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
         Route::get('/room/{id}','AppsController@room')->name('room');
         Route::get('/konfimasi/{id}','AppsController@konfirmasi')->name('konfirmasi')->middleware('guest');
     });
-    
 
     //Auth
     Route::post('/login','Apps\LoginController@login')->name('login');
     Route::post('/register','Apps\RegisterController@register')->name('register');
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
-<<<<<<< HEAD
-    Route::post('/password/reset', 'Apps\LoginController@reset')->name('reset');
-    Route::post('/password/email', 'Apps\LoginController@reset')->name('email');
-=======
     Route::post('/password/reset', 'Apps\ResetPasswordController@reset')->name('password.reset');
     Route::post('/password/email', 'Apps\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
->>>>>>> 06ecb7d22f2f57d0e96fb9e56a9ac9986702ec5e
     Route::get('/login',function(){
         return view('apps.auth.login');
     });
