@@ -7,6 +7,16 @@ use DB;
 
 class AppsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'room');
+    }
+
     public function index()
     {
         $Cabang = DB::table('tag')

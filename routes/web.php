@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 
 Auth::routes();
@@ -48,6 +48,7 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
     Route::post('/password/reset', 'Apps\ResetPasswordController@reset')->name('password.reset');
     Route::post('/password/email', 'Apps\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+<<<<<<< HEAD
 
     Route::get('/login',function(){
         return view('apps.auth.login');
@@ -58,4 +59,9 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
     Route::get('password/reset',function(){
         return view('apps.auth.reset');
     })->name('password.request');
+=======
+    Route::get('/login', 'Apps\LoginController@showLoginForm');
+    Route::get('/register', 'Apps\RegisterController@showRegistrationForm');
+    Route::get('password/reset', 'Apps\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+>>>>>>> 23bfe2506056711021589d84b4dccc1d8827e081
 });
