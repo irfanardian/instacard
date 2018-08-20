@@ -31,15 +31,15 @@ Route::prefix('home')->group(function () {
 });
 
 
-Route::group(['prefix' => 'apps', 'middleware' => 'desktop', 'as' => 'apps.'], function()
+Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
 {
     Route::get('/', 'AppsController@index')->name('index');
     //Auth
     Route::post('/login','Apps\LoginController@login')->name('login');
-    Route::post('/register','Apps\LoginController@login')->name('register');
+    Route::post('/register','Apps\RegisterController@register')->name('register');
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
-    Route::post('/password/reset', 'Apps\LoginController@reset')->name('reset');
-    Route::post('/password/email', 'Apps\LoginController@reset')->name('email');
+    Route::post('/password/reset', 'Apps\ResetPasswordController@reset')->name('password.reset');
+    Route::post('/password/email', 'Apps\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
     Route::get('/login',function(){
         return view('apps.auth.login');
