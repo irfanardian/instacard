@@ -44,12 +44,12 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
     Route::get('/user','AppsController@user')->name('user');
 
     //Auth
-    Route::post('/login','Apps\LoginController@login')->name('login');
-    Route::post('/register','Apps\RegisterController@register')->name('register');
+    Route::post('/login','Apps\LoginController@login');
+    Route::post('/register','Apps\RegisterController@register');
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
     Route::post('/password/reset', 'Apps\ResetPasswordController@reset')->name('password.reset');
     Route::post('/password/email', 'Apps\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('/login', 'Apps\LoginController@showLoginForm');
-    Route::get('/register', 'Apps\RegisterController@showRegistrationForm');
+    Route::get('/login', 'Apps\LoginController@showLoginForm')->name('login');
+    Route::get('/register', 'Apps\RegisterController@showRegistrationForm')->name('register');
     Route::get('password/reset', 'Apps\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 });
