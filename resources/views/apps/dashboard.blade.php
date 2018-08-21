@@ -76,11 +76,14 @@ h6{
                         <div class="flex-stretch menu-title">Profil</span></div>
                     </div>
                 </a>
-                <a class="list-group-item" href="{{ route('apps.logout')}}">
+                <a class="list-group-item" href="{{ route('apps.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <div class="flex-box">
                         <div class="flex-stretch menu-title">Keluar</div>
                     </div>
                 </a>
+                <form id="logout-form" action="{{ route('apps.logout')}}" method="POST" style="display: none;">
+                @csrf
+                </form>
             </div>
 			</div>
 		</div>
