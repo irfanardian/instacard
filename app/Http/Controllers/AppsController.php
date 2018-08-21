@@ -54,4 +54,8 @@ class AppsController extends Controller
         
         return view('apps.konfirmasi',['voucher'=>$voucher]);
     }
+    public function user()
+    {
+        return view('apps.dashboard');
+    }
 }

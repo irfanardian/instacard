@@ -1,0 +1,89 @@
+@extends('apps.auth.layout')
+
+@section('assets')
+<style>
+span{
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+h6{
+    margin: 10px 0 0 0;
+}
+.login100-form-title-1{
+    margin: 0;
+}
+.card-body{
+    padding: 8px;
+}
+.login100-form-title {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding: 25px 15px 10px 15px;
+}
+</style>
+@endsection
+
+@section('content')
+<div class="limiter">
+		<!-- <div class="container-login100"> -->
+			<!-- <div class="wrap-login100"> -->
+				<div class="login100-form-title" >
+					<span class="login100-form-title-1">
+						<img src="{{ asset('img/user.png') }}" width="125" height="125" alt="Profile">
+					</span>
+					<ul>
+						<li><h6>{{ Auth::user()->username }}</h6></li>
+						<li><span>{{ Auth::user()->email }}</span></li>
+					</ul>
+                </div>
+                <div class="card-body">
+					<div class="flex-box text-center">
+						<div class="flex-stretch" style="padding-right:5px">
+						<a href="/apps/credits" style="color:black">
+						<ul style="list-style-type: none;margin: 0;padding: 10px;border: 2px solid #ccc;border-radius: 5px;">
+							<li><b>Saldo</b></li>
+							<li>Rp 0,-</li>
+						</ul>
+						</a>
+						</div>
+					</div>
+				</div>
+                <div class="login100-form-menu">
+                <a class="list-group-item" href="#">
+                    <div class="flex-box">
+                        <div class="flex-stretch menu-title">Profil</span></div>
+                    </div>
+                </a>
+                <a class="list-group-item" href="{{ route('apps.logout')}}">
+                    <div class="flex-box">
+                        <div class="flex-stretch menu-title">Keluar</div>
+                    </div>
+                </a>
+            </div>
+			</div>
+		</div>
+	</div>
+
+@endsection

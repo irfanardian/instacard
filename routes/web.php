@@ -39,8 +39,9 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
     })->name('name');
     Route::prefix('voucher')->group(function(){
         Route::get('/room/{id}','AppsController@room')->name('room');
-        Route::get('/konfimasi/{id}','AppsController@konfirmasi')->name('konfirmasi')->middleware('guest');
+        Route::get('/konfimasi/{id}','AppsController@konfirmasi')->name('konfirmasi');
     });
+    Route::get('/user','AppsController@user')->name('user');
 
     //Auth
     Route::post('/login','Apps\LoginController@login')->name('login');
@@ -48,20 +49,7 @@ Route::group(['prefix' => 'apps', 'as' => 'apps.'], function()
     Route::post('/logout', 'Apps\LoginController@logout')->name('logout');
     Route::post('/password/reset', 'Apps\ResetPasswordController@reset')->name('password.reset');
     Route::post('/password/email', 'Apps\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-<<<<<<< HEAD
-
-    Route::get('/login',function(){
-        return view('apps.auth.login');
-    });
-    Route::get('/register',function(){
-        return view('apps.auth.register');
-    });
-    Route::get('password/reset',function(){
-        return view('apps.auth.reset');
-    })->name('password.request');
-=======
     Route::get('/login', 'Apps\LoginController@showLoginForm');
     Route::get('/register', 'Apps\RegisterController@showRegistrationForm');
     Route::get('password/reset', 'Apps\ForgotPasswordController@showLinkRequestForm')->name('password.request');
->>>>>>> 23bfe2506056711021589d84b4dccc1d8827e081
 });
