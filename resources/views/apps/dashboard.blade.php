@@ -13,9 +13,20 @@ span{
   flex-direction: column;
   align-items: center;
   font-size: 10px;
+  color: #fff;
 }
 h6{
     margin: 10px 0 0 0;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
 }
 .login100-form-title-1{
     margin: 0;
@@ -44,6 +55,8 @@ h6{
 }
 </style>
 @endsection
+
+@section('tittle','Dashboard')
 
 @section('content')
 <div class="limiter">

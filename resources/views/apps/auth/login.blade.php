@@ -1,5 +1,7 @@
 @extends('apps.auth.layout')
 
+@section('tittle','Login')
+
 @section('content')
     <div class="limiter">
 		<div class="container-login100">
@@ -15,22 +17,22 @@
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">{{ __('Username') }}</span>
 						<input class="input100 {{ $errors->has('username') ? ' is-invalid' : '' }}" id="username" type="text" name="username" placeholder="Enter username" value="{{ old('username') }}" required autofocus>
-                        @if ($errors->has('username'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('username') }}</strong>
-                            </span>
-                        @endif
 					</div>
+					@if ($errors->has('username'))
+						<label class="alert-danger" role="alert">
+							<strong>{{ $errors->first('username') }}</strong>
+						</label>
+                    @endif
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
 						<input id="password" class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required type="password" placeholder="Enter password">
-						@if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
 					</div>
+					@if ($errors->has('password'))
+						<label class="alert-danger" role="alert">
+							<strong>{{ $errors->first('password') }}</strong>
+						</label>
+					@endif
 
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">

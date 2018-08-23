@@ -1,5 +1,7 @@
 @extends('apps.auth.layout')
 
+@section('tittle','Konfirmasi')
+
 @section('content')
 <div class="limiter">
     <div class="container-login100">

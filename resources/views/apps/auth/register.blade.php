@@ -1,5 +1,7 @@
 @extends('apps.auth.layout')
 
+@section('tittle','Register')
+
 @section('content')
 <div class="limiter">
 		<div class="container-login100">
@@ -15,32 +17,32 @@
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
 						<input class="input100 {{ $errors->has('username') ? ' is-invalid' : '' }}" id="username" type="text" name="username" value="{{ old('username') }}" placeholder="Enter username">
-						@if ($errors->has('username'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('username') }}</strong>
-                            </span>
-                        @endif
 					</div>
+					@if ($errors->has('username'))
+						<span class="alert-danger" role="alert">
+							<strong>{{ $errors->first('username') }}</strong>
+						</span>
+					@endif
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Email is required">
 						<span class="label-input100">Email</span>
-						<input class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" type="text" name="email" value="{{ old('email') }}" placeholder="Enter Email">
-						@if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
+						<input class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Enter Email">
                     </div>
+					@if ($errors->has('email'))
+						<span class="alert-danger" role="alert">
+							<strong>{{ $errors->first('email') }}</strong>
+						</span>
+					@endif
                     
                     <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
 						<input class="input100" id="password" type="password" name="password" required placeholder="Enter password">
-						@if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
 					</div>
+					@if ($errors->has('password'))
+						<span class="alert-danger" role="alert">
+							<strong>{{ $errors->first('password') }}</strong>
+						</span>
+					@endif
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">{{ __('Confirm Password') }}</span>

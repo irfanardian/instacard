@@ -1,5 +1,7 @@
 @extends('apps.auth.layout')
 
+@section('tittle','Reset')
+
 @section('content')
     <div class="limiter">
 		<div class="container-login100">
@@ -16,7 +18,7 @@
 						<span class="label-input100">{{ __('E-Mail Address') }}</span>
 						<input class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" type="email" name="email" placeholder="Enter email" value="{{ old('email') }}" required autofocus>
                         @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
+                            <span class="alert-danger" role="alert">
                                 <strong>{{ $errors->first('email') }}</strong>
                             </span>
                         @endif
